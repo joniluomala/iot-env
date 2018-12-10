@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "IotHubs_DNAControlCenterHub_name": {
+            "value": null
+        },
+        "environments_DNAInsight_name": {
+            "value": null
+        },
+        "eventsources_event_stream_name": {
+            "value": null
+        },
+        "accesspolicies_ownerAccessPolicy_name": {
+            "value": null
+        },
+        "accesspolicies_roleAssignmentName_2018_12_07_09_36_23_2323_name": {
+            "value": null
+        }
+    }
+}
