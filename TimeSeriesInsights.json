@@ -78,6 +78,7 @@
                 "consumerGroupName": "tsi_consumergroup",
                 "sharedAccessKey": "[parameters('iotHub_sharedAccessKey')]",
                 "timestampPropertyName": "time",
+                "eventSourceResourceId": "[resourceId('Microsoft.Devices/IotHubs', parameters('IotHubs_DNAControlCenterHub_name'))]",
                 "localTimestamp": null
             },
             "dependsOn": [

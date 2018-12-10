@@ -39,4 +39,4 @@
 #******************************************************************************
 
 
-New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile $templateFilePath -TemplateParameterFile $parametersFilePath;
+New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile https://raw.githubusercontent.com/joniluomala/iot-env/master/TimeSeriesInsights.json -TemplateParameterFile $parametersFilePath;
