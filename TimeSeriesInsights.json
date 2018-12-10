@@ -89,7 +89,6 @@
                 "iotHubName": "[parameters('IotHubs_DNAControlCenterHub_name')]",
                 "keyName": "iothubowner",
                 "consumerGroupName": "tsi_consumergroup",
-                "keyname": "iothubowner",
                 "sharedAccessKey": "enHjyYtLmQm3GwRSQkE0W7C/jPlG+pFisVAyY6N/iNQ=",
                 "timestampPropertyName": "time",
                 "eventSourceResourceId": "[resourceId('Microsoft.Devices/IotHubs', parameters('IotHubs_DNAControlCenterHub_name'))]",
@@ -97,7 +96,6 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.TimeSeriesInsights/environments', parameters('environments_DNAInsight_name'))]",
-                "[resourceId('Microsoft.Devices/IotHubs', parameters('IotHubs_DNAControlCenterHub_name'))]"
             ]
         }
     ]
