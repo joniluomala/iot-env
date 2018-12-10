@@ -148,6 +148,7 @@
             "apiVersion": "2017-11-15",
             "scale": null,
             "properties": {
+                "principalObjectId": "[guid(resourceGroup().id, deployment().name)]"                ,
                 "roles": [
                     "Reader",
                     "Contributor"
@@ -170,6 +171,7 @@
                 "keyName": "iothubowner",
                 "consumerGroupName": "tsi_consumergroup",
                 "keyName": "iothubowner",
+                "sharedAccessKey": "enHjyYtLmQm3GwRSQkE0W7C/jPlG+pFisVAyY6N/iNQ=",
                 "timestampPropertyName": "time",
                 "eventSourceResourceId": "[resourceId('Microsoft.Devices/IotHubs', parameters('IotHubs_DNAControlCenterHub_name'))]",
                 "localTimestamp": null

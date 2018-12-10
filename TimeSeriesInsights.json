@@ -4,23 +4,27 @@
     "parameters": {
         "IotHubs_DNAControlCenterHub_name": {
             "defaultValue": "LatvisControlCenterHub",
-            "type": "String"
+            "type": "string"
         },
         "environments_DNAInsight_name": {
             "defaultValue": "DNAInsight",
-            "type": "String"
+            "type": "string"
         },
         "eventsources_event_stream_name": {
             "defaultValue": "event-stream",
-            "type": "String"
+            "type": "string"
         },
         "accesspolicies_ownerAccessPolicy_name": {
             "defaultValue": "ownerAccessPolicy",
-            "type": "String"
+            "type": "string"
         },
         "accesspolicies_roleAssignmentName": {
             "defaultValue": "roleAssignmentName",
-            "type": "String"
+            "type": "string"
+        },
+        "iotHub_sharedAccessKey": {
+            "defaultValue": "14WGP37TE1bEs0LTKeS2GjVErXo0EYZadX5H6p0t66I=",
+            "type": "string"
         }
     },
     "variables": {},
@@ -50,24 +54,7 @@
             "apiVersion": "2017-11-15",
             "scale": null,
             "properties": {
-                "principalObjectId": "1017847c-7e34-45cf-beda-707a4190af70",
-                "roles": [
-                    "Reader",
-                    "Contributor"
-                ]
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.TimeSeriesInsights/environments', parameters('environments_DNAInsight_name'))]"
-            ]
-        },
-        {
-            "comments": "Generalized from resource: '/subscriptions/ae6cbacb-2eac-42cc-978e-516b8ef7628d/resourcegroups/DNAControlCenter/providers/Microsoft.TimeSeriesInsights/environments/DNAInsight/accesspolicies/roleAssignmentName-2018-12-07-09-36-23-2323'.",
-            "type": "Microsoft.TimeSeriesInsights/environments/accesspolicies",
-            "name": "[concat(parameters('environments_DNAInsight_name'), '/', parameters('accesspolicies_roleAssignmentName'))]",
-            "apiVersion": "2017-11-15",
-            "scale": null,
-            "properties": {
-                "principalObjectId": "f30c0db3-f51a-4762-a9da-e7044c8a8d09",
+                "principalObjectId": "[guid(resourceGroup().id, deployment().name)]",
                 "roles": [
                     "Reader",
                     "Contributor"
@@ -89,7 +76,7 @@
                 "iotHubName": "[parameters('IotHubs_DNAControlCenterHub_name')]",
                 "keyName": "iothubowner",
                 "consumerGroupName": "tsi_consumergroup",
-                "sharedAccessKey": "enHjyYtLmQm3GwRSQkE0W7C/jPlG+pFisVAyY6N/iNQ=",
+                "sharedAccessKey": "[parameters('iotHub_sharedAccessKey')]",
                 "timestampPropertyName": "time",
                 "localTimestamp": null
             },
