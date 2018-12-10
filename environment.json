@@ -184,7 +184,7 @@
             "location": "westeurope",
             "scale": null,
             "properties": {
-                "iotHubName": "DNAControlCenterHub",
+                "iotHubName": "[parameters('IotHubs_DNAControlCenterHub_name')]",
                 "keyName": "iothubowner",
                 "consumerGroupName": "tsi_consumergroup",
                 "timestampPropertyName": "time",
