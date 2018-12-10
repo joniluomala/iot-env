@@ -91,11 +91,10 @@
                 "consumerGroupName": "tsi_consumergroup",
                 "sharedAccessKey": "enHjyYtLmQm3GwRSQkE0W7C/jPlG+pFisVAyY6N/iNQ=",
                 "timestampPropertyName": "time",
-                "eventSourceResourceId": "[resourceId('Microsoft.Devices/IotHubs', parameters('IotHubs_DNAControlCenterHub_name'))]",
                 "localTimestamp": null
             },
             "dependsOn": [
-                "[resourceId('Microsoft.TimeSeriesInsights/environments', parameters('environments_DNAInsight_name'))]",
+                "[resourceId('Microsoft.TimeSeriesInsights/environments', parameters('environments_DNAInsight_name'))]"
             ]
         }
     ]
