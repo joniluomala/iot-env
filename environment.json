@@ -3,12 +3,15 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "IotHubs_DNAControlCenterHub_name": {
+            "defaultValue": "LatvisControlCenterHub",
             "type": "String"
         },
         "environments_DNAInsight_name": {
+            "defaultValue": "DNAInsight",
             "type": "String"
         },
         "eventsources_event_stream_name": {
+            "defaultValue": "event-stream",
             "type": "String"
         },
         "accesspolicies_ownerAccessPolicy_name": {
