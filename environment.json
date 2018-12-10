@@ -189,9 +189,7 @@
                 "consumerGroupName": "tsi_consumergroup",
                 "timestampPropertyName": "time",
                 "eventSourceResourceId": "[resourceId('Microsoft.Devices/IotHubs', parameters('IotHubs_DNAControlCenterHub_name'))]",
-                "localTimestamp": null,
-                "creationTime": "Wed, 05 Dec 2018 21:56:27 GMT",
-                "provisioningState": "Succeeded"
+                "localTimestamp": null
             },
             "dependsOn": [
                 "[resourceId('Microsoft.TimeSeriesInsights/environments', parameters('environments_DNAInsight_name'))]",
