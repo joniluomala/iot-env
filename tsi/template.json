@@ -2,20 +2,20 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "IotHubs_DNAControlCenterHub_name": {
+        "iotHub_name": {
             "defaultValue": "LatvisControlCenterHub",
             "type": "string"
         },
-        "environments_DNAInsight_name": {
+        "environment_name": {
             "defaultValue": "DNAInsight",
             "type": "string"
         },
-        "eventsources_event_stream_name": {
+        "event_stream_name": {
             "defaultValue": "event-stream",
             "type": "string"
         },
-        "accesspolicies_ownerAccessPolicy_name": {
-            "defaultValue": "ownerAccessPolicy",
+        "accesspolicies_serviceAccessPolicy_name": {
+            "defaultValue": "service",
             "type": "string"
         },
         "accesspolicies_roleAssignmentName": {
@@ -37,7 +37,7 @@
                 "capacity": 1
             },
             "kind": "Standard",
-            "name": "[parameters('environments_DNAInsight_name')]",
+            "name": "[parameters('environment_name')]",
             "apiVersion": "2017-11-15",
             "location": "westeurope",
             "scale": null,
@@ -50,7 +50,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/ae6cbacb-2eac-42cc-978e-516b8ef7628d/resourcegroups/DNAControlCenter/providers/Microsoft.TimeSeriesInsights/environments/DNAInsight/accesspolicies/ownerAccessPolicy'.",
             "type": "Microsoft.TimeSeriesInsights/environments/accesspolicies",
-            "name": "[concat(parameters('environments_DNAInsight_name'), '/', parameters('accesspolicies_ownerAccessPolicy_name'))]",
+            "name": "[concat(parameters('environment_name'), '/', parameters('accesspolicies_ownerAccessPolicy_name'))]",
             "apiVersion": "2017-11-15",
             "scale": null,
             "properties": {
@@ -61,28 +61,28 @@
                 ]
             },
             "dependsOn": [
-                "[resourceId('Microsoft.TimeSeriesInsights/environments', parameters('environments_DNAInsight_name'))]"
+                "[resourceId('Microsoft.TimeSeriesInsights/environments', parameters('environment_name'))]"
             ]
         },
         {
             "comments": "Generalized from resource: '/subscriptions/ae6cbacb-2eac-42cc-978e-516b8ef7628d/resourcegroups/DNAControlCenter/providers/Microsoft.TimeSeriesInsights/environments/DNAInsight/eventsources/event-stream'.",
             "type": "Microsoft.TimeSeriesInsights/environments/eventsources",
             "kind": "Microsoft.IoTHub",
-            "name": "[concat(parameters('environments_DNAInsight_name'), '/', parameters('eventsources_event_stream_name'))]",
+            "name": "[concat(parameters('environment_name'), '/', parameters('event_stream_name'))]",
             "apiVersion": "2017-11-15",
             "location": "westeurope",
             "scale": null,
             "properties": {
-                "iotHubName": "[parameters('IotHubs_DNAControlCenterHub_name')]",
+                "iotHubName": "[parameters('iotHub_name')]",
                 "keyName": "iothubowner",
                 "consumerGroupName": "tsi_consumergroup",
                 "sharedAccessKey": "[parameters('iotHub_sharedAccessKey')]",
                 "timestampPropertyName": "time",
-                "eventSourceResourceId": "[resourceId('Microsoft.Devices/IotHubs', parameters('IotHubs_DNAControlCenterHub_name'))]",
+                "eventSourceResourceId": "[resourceId('Microsoft.Devices/IotHubs', parameters('iotHub_name'))]",
                 "localTimestamp": null
             },
             "dependsOn": [
-                "[resourceId('Microsoft.TimeSeriesInsights/environments', parameters('environments_DNAInsight_name'))]"
+                "[resourceId('Microsoft.TimeSeriesInsights/environments', parameters('environment_name'))]"
             ]
         }
     ]

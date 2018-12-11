@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+
+
+        "iotHub_name": {
+            "value": "LatvisControlCenterHub"
+        },
+        "environment_name": {
+            "value": "LatvisInsight"
+        },
+        "event_stream_name": {
+            "value": "event-stream"
+        },
+        "accesspolicies_serviceAccessPolicy_name": {
+            "value": "service"
+        },
+        "accesspolicies_roleAssignmentName": {
+            "value": "roleAssignmentName"
+        },
+        "iotHub_sharedAccessKey": {
+            "value": "cA2ty17izfm/65dpnfUV7cy98EMm+zaDzz1S6D2VZao="
+        }
+
+    }
+}
