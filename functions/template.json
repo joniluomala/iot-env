@@ -13,7 +13,7 @@
             "kind": "functionapp",
             "name": "[parameters('functionappplan_name')]",
             "apiVersion": "2016-09-01",
-            "location": "West Europe",
+            "location": "[parameters('functionappservice_location')]",
             "scale": null,
             "properties": {
                 "name": "[parameters('functionappplan_name')]",
@@ -33,7 +33,7 @@
             "kind": "functionapp",
             "name": "[parameters('functionappservice_name')]",
             "apiVersion": "2016-08-01",
-            "location": "West Europe",
+            "location": "[parameters('functionappservice_location')]",
             "scale": null,
             "properties": {
                 "enabled": true,
@@ -74,36 +74,19 @@
         }
     ],
     "parameters": {
-        "name": {
-            "type": "string"
-        },
-        "storageName": {
-            "type": "string"
-        },
-        "location": {
-            "type": "string"
-        },
-        "subscriptionId": {
-            "type": "string"
-        },
         "functionappplan_name": {
             "defaultValue": "dnacontrolcenterfunctions_plan",
             "type": "string"
         },
         "functionappservice_name": {
-            "defaultValue": "dnacontrolcenterfunctions",
-            "type": "string"
-        },
-        "config_web_name": {
-            "defaultValue": "web",
+            "defaultValue": "latviscontrolcenterfunctions",
             "type": "string"
         },
         "storageAccount_name": {
             "defaultValue": "dnacontrolcenterstorage",
             "type": "string"
         },
-        "hostNameBindings_name": {
-            "defaultValue": "dnacontrolcenterfunctions.azurewebsites.net",
+        "functionappservice_location": {
             "type": "string"
         }
     },
