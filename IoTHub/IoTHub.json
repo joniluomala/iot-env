@@ -2,11 +2,11 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "IotHub_name": {
+        "iothub_name": {
             "defaultValue": "DNAControlCenterHub",
             "type": "string"
         },
-        "IoTHub_uri": {
+        "iothub_uri": {
             "defaultValue": "dnacontrolcenterhub",
             "type": "string"
         }
@@ -21,7 +21,7 @@
                 "tier": "Standard",
                 "capacity": 1
             },
-            "name": "[parameters('IotHub_name')]",
+            "name": "[parameters('iothub_name')]",
             "apiVersion": "2018-04-01",
             "location": "westeurope",
             "tags": {},
@@ -49,8 +49,8 @@
                             "2",
                             "3"
                         ],
-                        "path": "[concat(parameters('IotHub_name'),parameters('IotHub_uri'), parameters('IotHub_name'))]",
-                        "endpoint": "[concat('sb://',parameters('IotHub_uri') , '.servicebus.windows.net/')]"
+                        "path": "[concat(parameters('iothub_name'),parameters('iothub_uri'), parameters('iothub_name'))]",
+                        "endpoint": "[concat('sb://',parameters('iothub_uri') , '.servicebus.windows.net/')]"
                     },
                     "operationsMonitoringEvents": {
                         "retentionTimeInDays": 1,
@@ -61,8 +61,8 @@
                             "2",
                             "3"
                         ],
-                        "path": "[concat(parameters('IotHub_name'),parameters('IotHub_uri') , '-operationmonitoring')]",
-                        "endpoint": "[concat('sb://',parameters('IotHub_uri') , '.servicebus.windows.net/')]"
+                        "path": "[concat(parameters('iothub_name'),parameters('iothub_uri') , '-operationmonitoring')]",
+                        "endpoint": "[concat('sb://',parameters('iothub_uri') , '.servicebus.windows.net/')]"
                     }
                 },
                 "routing": {
