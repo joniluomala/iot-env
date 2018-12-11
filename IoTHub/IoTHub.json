@@ -2,9 +2,13 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "IotHubs_DNAControlCenterHub_name": {
-            "defaultValue": "LatvisControlCenterHub",
-            "type": "String"
+        "IotHub_name": {
+            "defaultValue": "DNAControlCenterHub",
+            "type": "string"
+        },
+        "IoTHub_uri": {
+            "defaultValue": "dnacontrolcenterhub",
+            "type": "string"
         }
     },
     "variables": {},
@@ -17,7 +21,7 @@
                 "tier": "Standard",
                 "capacity": 1
             },
-            "name": "[parameters('IotHubs_DNAControlCenterHub_name')]",
+            "name": "[parameters('IotHub_name')]",
             "apiVersion": "2018-04-01",
             "location": "westeurope",
             "tags": {},
@@ -45,8 +49,8 @@
                             "2",
                             "3"
                         ],
-                        "path": "[concat(parameters('IotHubs_DNAControlCenterHub_name'),'dnacontrolcenterhub', parameters('IotHubs_DNAControlCenterHub_name'))]",
-                        "endpoint": "sb://iothub-ns-dnacontrol-1035902-a965119c67.servicebus.windows.net/"
+                        "path": "[concat(parameters('IotHub_name'),'parameters('IotHub_uri')', parameters('IotHub_name'))]",
+                        "endpoint": "[concat('sb://',parameters('IotHub_uri') , '.servicebus.windows.net/']"
                     },
                     "operationsMonitoringEvents": {
                         "retentionTimeInDays": 1,
@@ -57,8 +61,8 @@
                             "2",
                             "3"
                         ],
-                        "path": "[concat(parameters('IotHubs_DNAControlCenterHub_name'),'dnacontrolcenterhub-operationmonitoring')]",
-                        "endpoint": "sb://iothub-ns-dnacontrol-1035902-a965119c67.servicebus.windows.net/"
+                        "path": "[concat(parameters('IotHub_name'),parameters('IotHub_uri') , '-operationmonitoring')]",
+                        "endpoint": "[concat('sb://',parameters('IotHub_uri') , '.servicebus.windows.net/']"
                     }
                 },
                 "routing": {
