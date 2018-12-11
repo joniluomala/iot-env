@@ -87,6 +87,7 @@
             "type": "string"
         },
         "functionappservice_location": {
+            "defaultValue": "West Europe",
             "type": "string"
         }
     },
