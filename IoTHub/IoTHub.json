@@ -49,7 +49,7 @@
                             "2",
                             "3"
                         ],
-                        "path": "[concat(parameters('IotHub_name'),'parameters('IotHub_uri')', parameters('IotHub_name'))]",
+                        "path": "[concat(parameters('IotHub_name'),parameters('IotHub_uri'), parameters('IotHub_name'))]",
                         "endpoint": "[concat('sb://',parameters('IotHub_uri') , '.servicebus.windows.net/')]"
                     },
                     "operationsMonitoringEvents": {
