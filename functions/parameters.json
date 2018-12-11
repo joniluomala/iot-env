@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "dnacontrolcenterfunctions"
+        },
+        "storageName": {
+            "value": "dnacontrolcenterstorage"
+        },
+        "location": {
+            "value": "West Europe"
+        },
+        "subscriptionId": {
+            "value": "ae6cbacb-2eac-42cc-978e-516b8ef7628d"
+        }
+    }
+}
