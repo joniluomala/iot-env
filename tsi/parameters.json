@@ -13,14 +13,14 @@
         "event_stream_name": {
             "value": "event-stream"
         },
-        "accesspolicies_serviceAccessPolicy_name": {
-            "value": "service"
+        "accesspolicies_ownerAccessPolicy_name": {
+            "value": "iothubowner"
         },
         "accesspolicies_roleAssignmentName": {
             "value": "roleAssignmentName"
         },
         "iotHub_sharedAccessKey": {
-            "value": "cA2ty17izfm/65dpnfUV7cy98EMm+zaDzz1S6D2VZao="
+            "value": "PSqG4Y4wID5zo/h5qXsH8XQPTmpRG5D12vdBdnYsq5g="
         }
 
     }

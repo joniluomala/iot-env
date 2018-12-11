@@ -14,8 +14,8 @@
             "defaultValue": "event-stream",
             "type": "string"
         },
-        "accesspolicies_serviceAccessPolicy_name": {
-            "defaultValue": "service",
+        "accesspolicies_ownerAccessPolicy_name": {
+            "defaultValue": "iothubowner",
             "type": "string"
         },
         "accesspolicies_roleAssignmentName": {
@@ -48,9 +48,9 @@
             "dependsOn": []
         },
         {
-            "comments": "Generalized from resource: '/subscriptions/ae6cbacb-2eac-42cc-978e-516b8ef7628d/resourcegroups/DNAControlCenter/providers/Microsoft.TimeSeriesInsights/environments/DNAInsight/accesspolicies/serviceAccessPolicy'.",
+            "comments": "Generalized from resource: '/subscriptions/ae6cbacb-2eac-42cc-978e-516b8ef7628d/resourcegroups/DNAControlCenter/providers/Microsoft.TimeSeriesInsights/environments/DNAInsight/accesspolicies/ownerAccessPolicy'.",
             "type": "Microsoft.TimeSeriesInsights/environments/accesspolicies",
-            "name": "[concat(parameters('environment_name'), '/', parameters('accesspolicies_serviceAccessPolicy_name'))]",
+            "name": "[concat(parameters('environment_name'), '/', parameters('accesspolicies_ownerAccessPolicy_name'))]",
             "apiVersion": "2017-11-15",
             "scale": null,
             "properties": {
@@ -74,7 +74,7 @@
             "scale": null,
             "properties": {
                 "iotHubName": "[parameters('iotHub_name')]",
-                "keyName": "parameters('accesspolicies_serviceAccessPolicy_name'))",
+                "keyName": "parameters('accesspolicies_ownerAccessPolicy_name'))",
                 "consumerGroupName": "tsi_consumergroup",
                 "sharedAccessKey": "[parameters('iotHub_sharedAccessKey')]",
                 "timestampPropertyName": "time",
