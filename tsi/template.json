@@ -48,7 +48,7 @@
             "dependsOn": []
         },
         {
-            "comments": "Generalized from resource: '/subscriptions/ae6cbacb-2eac-42cc-978e-516b8ef7628d/resourcegroups/DNAControlCenter/providers/Microsoft.TimeSeriesInsights/environments/DNAInsight/accesspolicies/ownerAccessPolicy'.",
+            "comments": "Generalized from resource: '/subscriptions/ae6cbacb-2eac-42cc-978e-516b8ef7628d/resourcegroups/DNAControlCenter/providers/Microsoft.TimeSeriesInsights/environments/DNAInsight/accesspolicies/serviceAccessPolicy'.",
             "type": "Microsoft.TimeSeriesInsights/environments/accesspolicies",
             "name": "[concat(parameters('environment_name'), '/', parameters('accesspolicies_serviceAccessPolicy_name'))]",
             "apiVersion": "2017-11-15",
