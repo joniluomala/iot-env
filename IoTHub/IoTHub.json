@@ -50,7 +50,7 @@
                             "3"
                         ],
                         "path": "[concat(parameters('IotHub_name'),'parameters('IotHub_uri')', parameters('IotHub_name'))]",
-                        "endpoint": "[concat('sb://',parameters('IotHub_uri') , '.servicebus.windows.net/']"
+                        "endpoint": "[concat('sb://',parameters('IotHub_uri') , '.servicebus.windows.net/')]"
                     },
                     "operationsMonitoringEvents": {
                         "retentionTimeInDays": 1,
@@ -62,7 +62,7 @@
                             "3"
                         ],
                         "path": "[concat(parameters('IotHub_name'),parameters('IotHub_uri') , '-operationmonitoring')]",
-                        "endpoint": "[concat('sb://',parameters('IotHub_uri') , '.servicebus.windows.net/']"
+                        "endpoint": "[concat('sb://',parameters('IotHub_uri') , '.servicebus.windows.net/')]"
                     }
                 },
                 "routing": {
