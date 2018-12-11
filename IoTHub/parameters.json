@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "IotHub_name": {
-            "value": "DNAControlCenterHub"
+            "value": "LatvisControlCenterHub"
         },
         "IotHub_Uri": {
-            "value": "dnacontrolcenterhub"
+            "value": "latviscontrolcenterhub"
         }
     }
 }
